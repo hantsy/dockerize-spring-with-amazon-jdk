@@ -47,10 +47,12 @@ tasks.withType<Test> {
 tasks.named<BootBuildImage>("bootBuildImage") {
     environment.put("BP_JVM_VERSION", "21")
     environment.put("BP_JVM_TYPE", "JRE")
+    builder.set("paketobuildpacks/builder-jammy-base")
     buildpacks.set(
         listOf(
-            "urn:cnb:builder:paketo-buildpacks/java",
-            "paketobuildpacks/amazon-corretto"
+            "paketobuildpacks/java",
+            "paketobuildpacks/amazon-corretto",
+            "paketobuildpacks/spring-boot"
         )
     )
     imageName.set("hantsy/springdemo")
