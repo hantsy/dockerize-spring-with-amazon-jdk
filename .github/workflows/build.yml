@@ -9,9 +9,9 @@ name: Build
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master", "3x" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "master", "3x" ]
 
 jobs:
   build:
