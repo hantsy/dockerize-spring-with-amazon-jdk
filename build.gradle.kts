@@ -51,6 +51,7 @@ tasks.named<BootBuildImage>("bootBuildImage") {
         listOf(
             "urn:cnb:builder:paketo-buildpacks/java",
             "paketobuildpacks/amazon-corretto",
+            "paketobuildpacks/gradle",
             "paketobuildpacks/spring-boot"
         )
     )
