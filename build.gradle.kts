@@ -3,7 +3,7 @@ import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
 plugins {
     kotlin("jvm") version "2.2.0"
     kotlin("plugin.spring") version "2.2.0"
-    id("org.springframework.boot") version "4.0.0-M2"
+    id("org.springframework.boot") version "3.5.5"
     id("io.spring.dependency-management") version "1.1.7"
 }
 
@@ -46,10 +46,11 @@ tasks.withType<Test> {
 
 tasks.named<BootBuildImage>("bootBuildImage") {
     environment.put("BP_JVM_VERSION", "21")
+    environment.put("BP_JVM_TYPE", "JRE")
     buildpacks.set(
         listOf(
             "urn:cnb:builder:paketo-buildpacks/java",
-            "urn:cnb:builder:paketo-buildpacks/amazon-corretto"
+            "paketobuildpacks/amazon-corretto"
         )
     )
     imageName.set("hantsy/springdemo")
