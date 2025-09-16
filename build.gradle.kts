@@ -48,7 +48,7 @@ tasks.named<BootBuildImage>("bootBuildImage") {
     environment.put("BP_JVM_VERSION", "21")
     buildpacks.set(
         listOf(
-            "urn:cnb:builder:paketo-buildpacks/amazon-corretto",
+            "docker.io/paketobuildpacks/amazon-corretto",
             "urn:cnb:builder:paketo-buildpacks/java"
         )
     )
