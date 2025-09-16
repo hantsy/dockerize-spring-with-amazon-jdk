@@ -51,8 +51,8 @@ tasks.named<BootBuildImage>("bootBuildImage") {
 
     buildpacks.set(
         listOf(
-            "paketobuildpacks/java",
             "paketobuildpacks/amazon-corretto",
+            "paketobuildpacks/java",
             "paketobuildpacks/ca-certificates",
             "paketobuildpacks/syft",
             "paketobuildpacks/executable-jar",
