@@ -46,13 +46,17 @@ tasks.withType<Test> {
 
 tasks.named<BootBuildImage>("bootBuildImage") {
     environment.put("BP_JVM_VERSION", "21")
-    environment.put("BP_JVM_TYPE", "JRE")
+
+    builder.set("paketobuildpacks/ubuntu-noble-run-tiny")
 
     buildpacks.set(
         listOf(
-            "urn:cnb:builder:paketo-buildpacks/java",
+            "paketobuildpacks/java",
             "paketobuildpacks/amazon-corretto",
-            "paketobuildpacks/gradle",
+            "paketobuildpacks/ca-certificates",
+            "paketobuildpacks/syft",
+            "paketobuildpacks/executable-jar",
+            "paketobuildpacks/dist-zip",
             "paketobuildpacks/spring-boot"
         )
     )
