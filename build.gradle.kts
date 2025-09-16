@@ -46,13 +46,12 @@ tasks.withType<Test> {
 
 tasks.named<BootBuildImage>("bootBuildImage") {
     environment.put("BP_JVM_VERSION", "21")
-//    builder.set("paketobuildpacks/builder-jammy-base")
-//    buildpacks.set(
-//        listOf(
-//            "paketobuildpacks/java",
-//            "paketobuildpacks/amazon-corretto",
-//            "paketobuildpacks/spring-boot"
-//        )
-//    )
+    buildpacks.set(
+        listOf(
+            "docker.io/paketobuildpacks/amazon-corretto",
+            "urn:cnb:builder:paketo-buildpacks/java"
+        )
+    )
+
     imageName.set("hantsy/springdemo")
 }
