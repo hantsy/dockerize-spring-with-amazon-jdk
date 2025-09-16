@@ -51,7 +51,7 @@ tasks.named<BootBuildImage>("bootBuildImage") {
 
     buildpacks.set(
         listOf(
-            "gcr.io/paketo-buildpacks/amazon-corretto",
+            "docker.io/paketobuildpacks/amazon-corretto",
             "urn:cnb:builder:paketo-buildpacks/java"
         )
     )
