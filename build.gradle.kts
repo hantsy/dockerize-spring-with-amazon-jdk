@@ -51,13 +51,8 @@ tasks.named<BootBuildImage>("bootBuildImage") {
 
     buildpacks.set(
         listOf(
-            "paketobuildpacks/amazon-corretto",
-            "paketobuildpacks/java",
-            "paketobuildpacks/ca-certificates",
-            "paketobuildpacks/syft",
-            "paketobuildpacks/executable-jar",
-            "paketobuildpacks/dist-zip",
-            "paketobuildpacks/spring-boot"
+            "gcr.io/paketo-buildpacks/amazon-corretto",
+            "urn:cnb:builder:paketo-buildpacks/java"
         )
     )
 
