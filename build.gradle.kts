@@ -46,13 +46,10 @@ tasks.withType<Test> {
 
 tasks.named<BootBuildImage>("bootBuildImage") {
     environment.put("BP_JVM_VERSION", "21")
-
-    //builder.set("paketobuildpacks/ubuntu-noble-run-tiny")
-
     buildpacks.set(
         listOf(
-            "docker.io/paketobuildpacks/amazon-corretto",
-            "urn:cnb:builder:paketo-buildpacks/java"
+            "paketo-buildpacks/amazon-corretto",
+            "paketo-buildpacks/java"
         )
     )
 
