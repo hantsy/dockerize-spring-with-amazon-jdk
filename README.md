@@ -1,2 +1,3 @@
-# dockerize-spring-with-amz-jdk
-Customize Spring Boot Build Image Task
+# Dockerize Spring Boot with custom Amazon JDK(Corretto)
+
+
